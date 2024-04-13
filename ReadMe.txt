@@ -6,7 +6,8 @@ This codebase implements a meal deal calculator that allows users to create cust
 
 1. **main()**: This function serves as the main entry point for the meal deal calculator. It prompts the user to select items for each meal deal category, calculates the total cost of the meal deal including any applicable discounts and sugar tax, and then prints the details of the meal deal.
 
-2. **step_through_database(keys, database)**: This function displays the available options for a given category from the database and checks if any products are listed. It iterates through each key in the database, prints the details of the products including their prices and descriptions, and returns a boolean indicating if any products are listed.
+2. **step_through_database(keys, database)**: This function displays the available options for a given category from the database and checks if any products are listed. It iterates through each key in the database, prints the details of the products including their prices and descriptions, and returns a boolean indicating if any products are listed. A product is defined as listed when its displayed to the user at this stage the user can make thier final selection for a given category. 
+
 
 3. **get_input(database)**: This function prompts the user for input and returns their selection if it exists in the provided database. It loops indefinitely until a valid input is received, checking if the input exists in the database before returning it.
 
