@@ -129,7 +129,7 @@ def main():
     
 
     # Test 
-    # meal_deal_product_keys  = [['Main', 'Sandwich', 'Veg', 'Cheese'], ['Snack', 'Fruits', 'Apple'], ['Drink', 'Fizzy', 'Coke']] 
+    #meal_deal_product_keys  = [['Main', 'Sandwich', 'Veg', 'Cheese'], ['Snack', 'Fruits', 'Apple'], ['Drink', 'Fizzy', 'Coke']] 
 
     # Get the user selection for each meal deal option
     meal_deal_product_keys  = [get_selection(option) for option in meal_deal_options]
@@ -146,6 +146,16 @@ def main():
     # Calculate the sugar tax for the selected products
     sugar_tax = sum([get_database(product_keys, database).get("price") * sugar_tax_rate for product_keys in meal_deal_product_keys if get_database(product_keys, database).get("SugarTax")])
 
+
+
+    # Calculate the sugar tax for the selected products
+    """    
+    sugar_tax = 0
+    for product_keys in meal_deal_product_keys:
+        if get_database(product_keys, database).get("SugarTax"):
+            sugar_tax+= get_database(product_keys, database).get("price") * sugar_tax_rate
+    """
+
     # Calculate the total cost including sugar tax and discount
     total_cost = meal_deal_price + sugar_tax - meal_deal_discount
 
@@ -156,49 +166,6 @@ def main():
 
 
 
-# Function to display the available options for a given category and check if any products are listed
-def step_through_database(keys, database):
-    # Initialize the flag indicating if any products are listed to False
-    product_listed = False 
-    # Print a message prompting the user to select their choice for the current category
-    print(f"\n\nPlease select your {keys[-1]}\n")
-    # Iterate through each key in the database
-    for key in database.keys():
-        # Check if the current key represents a product
-        if database[key].get("Product"):
-            # Set the flag to True indicating that at least one product is listed
-            product_listed = True
-            # Print the details of the product including its price and description
-            print(f"{key} £{database[key]['price']} \n{database[key]['description']}\n")        
-        else:
-            # Print the key if it does not represent a product
-            print(key)
-    # Return the flag indicating if any products are listed
-    return product_listed
-
-        
-    
-
-
-# Function to prompt the user for input and return their selection if it exists in the database
-def get_input(database):
-    # Loop indefinitely until a valid input is received
-    while True:
-        # Prompt the user for input
-        user_input = input("\n> ")
-        # Check if the user's input exists in the database
-        if database.get(user_input):
-            # Return the user's input
-            return user_input
-
-# Function to retrieve data from the database based on a list of keys
-def get_database(keys, database):
-    # Iterate through each key in the list
-    for key in keys:
-        # Update the database with the data corresponding to the current key
-        database = database[key]
-    # Return the final database after all keys are processed
-    return database
 
 
 # Function to recursively prompt the user to select an item from a given category
@@ -223,6 +190,49 @@ def get_selection(target):
         if product_listed and working_database.get('Product', False):
             # Return the list of keys representing the chosen products
             return keys
+
+    # Function to retrieve data from the database based on a list of keys
+def get_database(keys, database):
+    # Iterate through each key in the list
+    for key in keys:
+        # Update the database with the data corresponding to the current key
+        database = database[key]
+    # Return the final database after all keys are processed
+    return database
+
+
+# Function to display the available options for a given category and check if any products are listed
+def step_through_database(keys, database):
+    # Initialize the flag indicating if any products are listed to False
+    product_listed = False 
+    # Print a message prompting the user to select their choice for the current category
+    print(f"\n\nPlease select your {keys[-1]}\n")
+    # Iterate through each key in the database
+    for key in database.keys():
+        # Check if the current key represents a product
+        if database[key].get("Product"):
+            # Set the flag to True indicating that at least one product is listed
+            product_listed = True
+            # Print the details of the product including its price and description
+            print(f"{key} £{database[key]['price']} \n{database[key]['description']}\n")        
+        else:
+            # Print the key if it does not represent a product
+            print(key)
+    # Return the flag indicating if any products are listed
+    return product_listed
+
+# Function to prompt the user for input and return their selection if it exists in the database
+def get_input(database):
+    # Loop indefinitely until a valid input is received
+    while True:
+        # Prompt the user for input
+        user_input = input("\n> ")
+        # Check if the user's input exists in the database
+        if database.get(user_input):
+            # Return the user's input
+            return user_input
+
+
 
 
 

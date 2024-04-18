@@ -1,0 +1,32 @@
+{
+    "admin": [
+        {               
+            "Unique_ID":1,
+            "Unique_Admin_ID": 1,
+            "Username": "admin1",
+            "Password": "P@ssw0rd1",
+            "type": "admin"
+
+        }
+    ],
+    "business_user": [
+        {
+            "Unique_ID":2,
+            "Unique_Bs_User_ID": 2,
+            "Unique_Business_ID":1,
+            "Username": "business_user1",
+            "Password": "P@ssw0rd2",
+            "type": "business_user"
+        }
+    ],
+    "business_admin": [
+        {
+            "Unique_ID":3,
+            "Unique_Bs_Admin_ID": 3,
+            "Unique_Business_ID":1,
+            "Username": "backend_user1",
+            "Password": "P@ssw0rd3",
+            "type": "business_admin"
+        }
+    ]
+}
