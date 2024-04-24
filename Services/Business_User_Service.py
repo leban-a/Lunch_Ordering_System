@@ -13,7 +13,6 @@ class BusinessUserService():
                 .join(self.app.map.ProductTypeSubcategories, self.app.map.Subcategory.subcategory_id == self.app.map.ProductTypeSubcategories.subcategory_id)\
                 .filter(self.app.map.ProductTypeSubcategories.product_type_id == product_type_id)\
                 .all()
-            print(result)
         return result
     
     def get_values_based_on_subcategory(self, subcategory_ids):
@@ -32,8 +31,6 @@ class BusinessUserService():
             result = session.query(Product.product_name, Product.product_id)\
                 .filter(Product.product_id.in_(subquery1), Product.product_id.in_(subquery2))\
                 .all()
-            
-
         return result
     
     def get_product_by_subcategory(self, subcategory_id):
@@ -58,10 +55,12 @@ class BusinessUserService():
             result = session.query(Product.product_id, Product.product_name, Product.product_type_id, Product.product_description, Product.product_price)\
                 .filter(Product.product_id == product_id)\
                 .all()
-            print(result)
         return result
     
     def create_order(self, order_data):
+        
+        print("Order Data: ",order_data)
+    
         session = self.app.Session()
         Order = self.app.map.Order
         with session:
@@ -78,9 +77,9 @@ class BusinessUserService():
 
     def create_order_details(self,order_details_data):
 
-        print("*"*100)
-        print(order_details_data)
-        print("*"*100)
+    
+        print("Order Details:", order_details_data)
+        
         session = self.app.Session()
         OrderDetails = self.app.map.OrderDetail
         with session:

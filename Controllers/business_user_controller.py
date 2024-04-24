@@ -64,7 +64,7 @@ class BusinessUserController:
 
     def create_order(self):
 
-
+        print("*"*50)
         try: 
             self.get_product_selection_details()
             print(self.get_employee_details(int(self.app.logged_in_user)))
@@ -81,11 +81,13 @@ class BusinessUserController:
 
                 order_details_data = {'order_id': order_id, 'product_id': value['product_id'], 'product_type_id':value['product_type_id']}
                 self.business_user_service.create_order_details(order_details_data)
-
+                
+            print("*"*50)
             return True
         except Exception as e:
             print(e)
             return False
+        
 
 
     def convert_date_format(self,date_str, sql):
