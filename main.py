@@ -27,7 +27,7 @@ class Application:
         self.state = None
 
         self.server = Establish_Connections(
-            db_name='SkillsNetworkTest', 
+            db_name='DatabaseTest', 
             create_db=True, 
             create_tables=True, 
             create_data=True)
