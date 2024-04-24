@@ -98,7 +98,7 @@ The Application will be modelled using the MVC (Model View Controller) Developme
 
 
 #####
-Previous Scope
+Previous Scope - Moved to defunct
 #####
 
 
