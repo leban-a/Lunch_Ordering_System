@@ -16,7 +16,7 @@ Tables.py and Data.py store SQL Create and SQL Insert requess.
 
 
 Testing:  
-All users can login, result shown in termianl, 
+All users can login, result shown in termianl, for Business Admin,  Admin and Admin. User Login Details Located in Data.py
 BusinessUsers can create orders,  limited to 1 order per calandar day, 14day look ahaead. 
 
 
