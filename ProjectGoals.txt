@@ -1,0 +1,11 @@
+This branch aims build on the features established in the meal deal appliation: 
+
+It will included three main stake holders: admin, employee, and business: 
+
+An admin: 
+Will be able manaager all the users, orders and inventory, aswell as generate reports
+
+An employee:
+Will be able to add, modify, or delete thier meal order.
+
+A business: will be able to see what manage orders, manager users within thier business and generate reports. 
