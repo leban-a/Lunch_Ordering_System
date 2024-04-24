@@ -1,6 +1,34 @@
+
+### Development - Corporate Lunch System: 
+
+This branch aims build on the features established in the meal deal application: 
+
+It will included two key stake holder Groups: Business and Administration: broken down in two subsets Users and Admins 
+
+The application use case:
+
+This application would be ideal for a organisation that provides lunches for their staff.
+This could be used for both in-house and third party lunch suppliers. 
+
+
+An admin: 
+Will be able manage all the users, orders and inventory, as-well as generate reports
+
+An employee:
+Will be able to add, modify, or delete their meal order.
+
+A business: will be able t0 manage orders, manager users within their business and generate reports. 
+
+This Project will aim to provide a GUI for the various user views.
+The application will incorporate a SQL Database System, implemented and queried using python.
+
+
+
+Previous Scope: 
+
 ### Meal Deal
 
-This codebase implements a meal deal calculator that allows users to create customized meal deals consisting of a main dish, a snack, and a drink. The meal deal options are predefined, and the user can choose from a variety of items available in each category.
+This codebase implements a meal deal calculator that allows users to create customised meal deals consisting of a main dish, a snack, and a drink. The meal deal options are predefined, and the user can choose from a variety of items available in each category.
 
 #### Methods Used:
 
