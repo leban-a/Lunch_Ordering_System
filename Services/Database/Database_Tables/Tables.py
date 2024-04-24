@@ -86,9 +86,10 @@ create_product_subcategories_table = """
 CREATE TABLE ProductSubcategories (
     product_id INT NOT NULL,
     subcategory_id INT NOT NULL,
+    note VARCHAR(255),
     FOREIGN KEY (product_id) REFERENCES Products(product_id),
     FOREIGN KEY (subcategory_id) REFERENCES Subcategories(subcategory_id),
-    UNIQUE (product_id, subcategory_id)
+    PRIMARY KEY (product_id, subcategory_id)
 );
 """
 
@@ -126,9 +127,22 @@ CREATE TABLE OrderDetails (
     order_detail_id INT AUTO_INCREMENT PRIMARY KEY,
     order_id INT NOT NULL,
     product_id INT NOT NULL,
-    product_type VARCHAR(50) NOT NULL,
+    product_type_id INT NOT NULL,
     FOREIGN KEY (order_id) REFERENCES Orders(order_id),
     FOREIGN KEY (product_id) REFERENCES Products(product_id),
+    FOREIGN KEY (product_type_id) REFERENCES ProductTypes(product_type_id), 
     UNIQUE (order_id, product_id)
     );
+"""
+
+create_product_type_subcategories_table = """
+CREATE TABLE ProductTypeSubcategories (
+    product_type_id INT NOT NULL,
+    subcategory_id INT NOT NULL,
+    note VARCHAR(255),
+    FOREIGN KEY (product_type_id) REFERENCES ProductTypes(product_type_id),
+    FOREIGN KEY (subcategory_id) REFERENCES Subcategories(subcategory_id),
+    PRIMARY KEY (product_type_id, subcategory_id)
+
+);
 """

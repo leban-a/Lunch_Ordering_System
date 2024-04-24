@@ -24,11 +24,65 @@ The application will incorporate a SQL Database System, implemented and queried 
 
 
 
-Previous Scope: 
+Development:
+
+The Application will be modelled using the MVC (Model View Controller) Development Process With a Serice Layer:
+
+
+├── Controllers/
+│   ├── __init__.py
+│   ├── business_user_controller.py
+│   └── login_controller.py
+│
+├── Models/
+│   ├── Definitive_Models/
+│   │   ├── business.py
+│   │   ├── business_rate.py
+│   │   ├── employee_business.py
+│   │   ├── inventory.py
+│   │   ├── order.py
+│   │   ├── order_details.py
+│   │   ├── product.py
+│   │   ├── product_subcategory.py
+│   │   ├── product_type.py
+│   │   ├── subcategory.py
+│   │   └── user.py
+│   ├── Model_Mapping.py
+│   └── __init__.py
+│
+├── Services/
+│   ├── Business_User_Service.py
+│   ├── Database/
+│   │   ├── Database_Tables/
+│   │   │   ├── Data.py
+│   │   │   └── Tables.py
+│   │   ├── SQL_Database_Management.py
+│   │   ├── SQL_Database_Setup.py
+│   │   ├── SQL_Server_Management.py
+│   │   ├── Setup.py
+│   │   └── __init__.py
+│   ├── User_Service.py
+│   └── __init__.py
+│
+├── Views/
+│   ├── __init__.py
+│   ├── base_view.py
+│   ├── business_user_view.py
+│   └── login_view.py
+│
+├── main.py
+├── ReadMe.txt
+
+
+#####
+Previous Scope
+#####
+
+
 
 ### Meal Deal
 
-This codebase implements a meal deal calculator that allows users to create customised meal deals consisting of a main dish, a snack, and a drink. The meal deal options are predefined, and the user can choose from a variety of items available in each category.
+This codebase implements a meal deal calculator that allows users to create customized meal deals consisting of a main dish, a snack, and a drink. The meal deal options are predefined, and the user can choose from a variety of items available in each category.
 
 #### Methods Used:
 
@@ -42,3 +96,5 @@ This codebase implements a meal deal calculator that allows users to create cust
 4. **get_database(keys, database)**: This function retrieves data from the database based on a list of keys. It iterates through each key in the list, updating the database with the data corresponding to the current key, and returns the final database after all keys are processed.
 
 5. **get_selection(target)**: This function recursively prompts the user to select an item from a given category until a valid selection is made. It initializes a list of keys with the initial category, retrieves the corresponding data from the database, and enters a loop until a valid selection is made. Within the loop, it displays the available options for the current category, prompts the user for input, and updates the keys list with the user's selection. After each iteration, it updates the working database with the new category data based on the user's input. If a valid product is selected, it returns the list of keys representing the chosen products.
+
+

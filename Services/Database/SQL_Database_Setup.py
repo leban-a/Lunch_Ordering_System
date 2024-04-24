@@ -1,15 +1,19 @@
-from Services.Database_Tables.Tables import *
-from Services.Database_Tables.Data import *
+from Services.Database.Database_Tables.Tables import *
+from Services.Database.Database_Tables.Data import *
 
 
 class Database_Setup():
 
     def __init__(self, execute_query, connection,  tables = False, data = False):
 
+        print('Setting up Database\n')
         if tables:
+            print('Creating Tables:\n')
             self.create_database_tables(execute_query, connection)
         if data:
+            print('\n\nPopulating Tables:\n')
             self.populate_database_tables(execute_query, connection)
+        print('\nDatabase Setup Complete')
             
 
 
@@ -36,9 +40,6 @@ class Database_Setup():
         # Create the subcategories table
         execute_query( create_subcategories_table)
 
-        # Create the product subcategories table
-        execute_query( create_product_subcategories_table)
-
         # Create the business rates table
         execute_query( create_business_rates_table)
 
@@ -49,6 +50,12 @@ class Database_Setup():
         execute_query( create_order_details_table)
 
 
+        # Create the product subcategories table
+        execute_query( create_product_subcategories_table)
+
+        # Create the product types subcategories table
+        execute_query( create_product_type_subcategories_table)
+                       
 
     def populate_database_tables(self, execute_query, connection):
 
@@ -79,4 +86,7 @@ class Database_Setup():
         # Populate the business rates table
         execute_query( pop_business_rates_table)
 
+        # Populate the product types subcategories table
+        execute_query( pop_product_type_subcategories_table)
+                       
 
