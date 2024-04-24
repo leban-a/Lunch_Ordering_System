@@ -1,3 +1,26 @@
+How to use:
+This application relies on a SQL Server Connection. Program is currently Set to work on a local server:
+Used SQL-Workbench to interact with SQL
+
+
+
+Application will connect to the server using the following credentials unless changed in main.py
+            db_name='DatabaseTest',
+            host_name = 'localhost',
+            user_name = 'root', 
+            user_password = 'password', 
+
+
+Database and tables will be automatically created and then populated. Rules can be adjusted in set_up.py or main.py
+Tables.py and Data.py store SQL Create and SQL Insert requess.
+
+
+Testing:  
+All users can login, result shown in termianl, 
+BusinessUsers can create orders,  limited to 1 order per calandar day, 14day look ahaead. 
+
+
+
 
 ### Development - Corporate Lunch System: 
 
