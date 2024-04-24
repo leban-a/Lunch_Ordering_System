@@ -29,10 +29,6 @@ class User_Login:
 
 
 
-
-
-
-
     def clear_frame(self,frame):
         for widget in frame.winfo_children():
             widget.destroy()

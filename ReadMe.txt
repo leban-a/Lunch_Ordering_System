@@ -1,3 +1,11 @@
+
+Libaries Needed: 
+
+sqlalchemy
+tkinter
+mysql
+
+
 How to use:
 This application relies on a SQL Server Connection. Program is currently Set to work on a local server:
 Used SQL-Workbench to interact with SQL
